@@ -97,7 +97,7 @@ module.exports = {
     }
 
     // Footer
-    output += `\n╭─ [ HYPER ]\n`;
+    output += `\n╭─ [ HYPER BOT ]\n`;
     output += `╰‣ 𝐀𝐝𝐦𝐢𝐧 : R A F S A N⚡\n`;
     output += `╰‣ 𝐓𝐨𝐭𝐚𝐥 𝐜𝐨𝐦𝐦𝐚𝐧𝐝𝐬 : ${allCommands.size}\n`;
     output += `╰‣ 𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤 \n`;
