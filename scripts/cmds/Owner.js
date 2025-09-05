@@ -1,0 +1,64 @@
+const request = require("request");
+const fs = require("fs-extra");
+
+module.exports.config = {
+  name: "owner",
+  version: "1.0.1",
+  hasPermssion: 0,
+  credits: "SHAHADAT SAHU",
+  description: "Show Owner Info with styled box & random photo",
+  commandCategory: "Information",
+  usages: "owner",
+  cooldowns: 2
+};
+
+module.exports.run = async function ({ api, event }) {
+
+  
+  const info = `
+╔═════════════════════ ✿
+║ ✨ 𝗢𝗪𝗡𝗘𝗥 𝗜𝗡𝗙𝗢 ✨
+╠═════════════════════ ✿
+║ 👑 𝗡𝗮𝗺𝗲 : RASIN AHMED 
+║ 🧸 𝗡𝗶𝗰𝗸 𝗡𝗮𝗺𝗲 : AJAZ
+║ 🎂 𝗔𝗴𝗲 : 21
+║ 💘 𝗥𝗲𝗹𝗮𝘁𝗶𝗼𝗻 : 𝗦𝗶𝗻𝗴𝗹𝗲 Apatoto
+║ 🎓 𝗣𝗿𝗼𝗳𝗲𝘀𝘀𝗶𝗼𝗻 : 𝗦𝘁𝘂𝗱𝗲𝗻𝘁
+║ 📚 𝗘𝗱𝘂𝗰𝗮𝘁𝗶𝗼𝗻 : Tumi jaina ki korba
+║ 🏡 𝗔𝗱𝗱𝗿𝗲𝘀𝘀 : Munshiganj, 𝐁𝐚𝐧𝐠𝐥𝐚𝐝𝐞𝐬𝐡
+╠═════════════════════ ✿
+║ 🔗 𝗖𝗢𝗡𝗧𝗔𝗖𝗧 𝗟𝗜𝗡𝗞𝗦
+╠═════════════════════ ✿
+║ 📘 𝗙𝗮𝗰𝗲𝗯𝗼𝗼𝗸 :
+║ fb.com/100055164094472
+║ 💬 𝗠𝗲𝘀𝘀𝗲𝗻𝗴𝗲𝗿 :
+║ m.me/100055164094472
+║ 📞 𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽 :
+║ wa.me/01736626760
+║ ✈️ 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 :
+║ nai use kori na 
+╚═════════════════════ ✿
+`;
+
+  const images = [
+    "https://imgur.com/a/s7oRy2u.png",
+    "https://imgur.com/a/s7oRy2u.png",
+    "https://imgur.com/a/s7oRy2u.jpeg",
+    "https://imgur.com/a/s7oRy2u.jpeg"
+  ];
+
+  const randomImg = images[Math.floor(Math.random() * images.length)];
+
+  const callback = () => api.sendMessage(
+    {
+      body: info,
+      attachment: fs.createReadStream(__dirname + "/cache/owner.jpg")
+    },
+    event.threadID,
+    () => fs.unlinkSync(__dirname + "/cache/owner.jpg")
+  );
+
+  return request(encodeURI(randomImg))
+    .pipe(fs.createWriteStream(__dirname + "/cache/owner.jpg"))
+    .on("close", () => callback());
+};
