@@ -1,8 +1,9 @@
-# 🐐 Goat Bot v2
+# ☠️ HYPER Bot v2
 
 A **Messenger Bot** built using **Node.js** that runs on your personal Facebook account.  
 Made with ❤️ by **NTKhang** & customized for extended use.
-
+NOW IS CUSTOMISING BY RAFSAN AHMED 
+AND THE OFFICIAL OWNER IS RAFSAN AHMED.
 ---
 
 ## ✨ Features
