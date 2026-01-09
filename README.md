@@ -1,8 +1,10 @@
 # ☠️ HYPER Bot v2
 
-A **Messenger Bot** built using **Node.js** that runs on your personal Facebook account.  
-Made with ❤️ by **NTKhang** & customized for extended use.
-NOW IS CUSTOMISING BY RAFSAN AHMED.
+The original author of this Bot is Ntkhang. This fork is maintained by: RAFSAN
+
+If you find any issues, please report them!
+
+𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤: Rafsan Ahmed https://fb.com/rafsan.ahmed.69
 ---
 
 ## ✨ Features
